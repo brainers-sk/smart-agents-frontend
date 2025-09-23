@@ -531,6 +531,13 @@ export interface components {
             items: components["schemas"]["GetChatSessionDto"][];
             pagination: components["schemas"]["ResponseGetItemsPaginationDto"];
         };
+        AddOrRemoveTagDto: {
+            /**
+             * @description name of tag
+             * @example test
+             */
+            tag: string;
+        };
     };
     responses: never;
     parameters: never;
@@ -824,7 +831,11 @@ export interface operations {
             };
             cookie?: never;
         };
-        requestBody?: never;
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddOrRemoveTagDto"];
+            };
+        };
         responses: {
             /** @description Tag added */
             200: {
@@ -854,7 +865,11 @@ export interface operations {
             };
             cookie?: never;
         };
-        requestBody?: never;
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddOrRemoveTagDto"];
+            };
+        };
         responses: {
             /** @description Tag removed */
             200: {

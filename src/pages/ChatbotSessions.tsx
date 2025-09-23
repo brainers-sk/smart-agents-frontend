@@ -15,7 +15,7 @@ type GetChatSessionDto = components["schemas"]["GetChatSessionDto"];
 type GetChatSessionsDto = components["schemas"]["GetChatSessionsDto"];
 type GetChatSessionMessagesDto =
   components["schemas"]["GetChatSessionMessagesDto"];
-type GetChatbotDto = components["schemas"]["GetChatbotDto"];
+type GetChatbotWithTagsDto = components["schemas"]["GetChatbotWithTagsDto"];
 
 export default function ChatbotSessions() {
   const { uuid } = useParams<{ uuid: string }>();
@@ -35,11 +35,13 @@ export default function ChatbotSessions() {
 
   const [selectedSession, setSelectedSession] =
     useState<GetChatSessionMessagesDto | null>(null);
+  const [feedbackSearch, setFeedbackSearch] = useState("");
+  const [firstChatSearch, setFirstChatSearch] = useState("");
 
   // Load available tags from chatbot detail
   useEffect(() => {
     if (!uuid) return;
-    getChatbot(uuid).then((bot: GetChatbotDto) => {
+    getChatbot(uuid).then((bot: GetChatbotWithTagsDto) => {
       setAvailableTags(bot.tags || []);
     });
   }, [uuid]);
@@ -50,17 +52,15 @@ export default function ChatbotSessions() {
     setLoading(true);
 
     getChatbotSessions(uuid, {
-      currentPage: page + 1,
-      pagination: rowsPerPage,
-      search: search || undefined,
-      customerRating: selectedCustomerRatings.length
-        ? selectedCustomerRatings
-        : undefined,
-      adminRating: selectedAdminRatings.length
-        ? selectedAdminRatings
-        : undefined,
-      adminTag: selectedAdminTags.length ? selectedAdminTags : undefined,
-    })
+  currentPage: page + 1,
+  pagination: rowsPerPage,
+  search: search || undefined,
+  customerRating: selectedCustomerRatings.length ? selectedCustomerRatings : undefined,
+  adminRating: selectedAdminRatings.length ? selectedAdminRatings : undefined,
+  adminTag: selectedAdminTags.length ? selectedAdminTags : undefined,
+  customerFeedback: feedbackSearch || undefined,
+  firstChat: firstChatSearch || undefined,
+})
       .then((res) => {
         setSessions(res.items);
         setPagination(res.pagination);
@@ -132,34 +132,29 @@ export default function ChatbotSessions() {
 
       {/* Sessions Table */}
       <ChatbotSessionsTable
-        sessions={sessions}
-        pagination={pagination}
-        page={page}
-        rowsPerPage={rowsPerPage}
-        onPageChange={(newPage) => setPage(newPage)}
-        onRowsPerPageChange={(rows) => {
-          setRowsPerPage(rows);
-          setPage(0);
-        }}
-        onOpenSession={openSession}
-        selectedUuid={selectedSession?.uuid}
-        selectedCustomerRatings={selectedCustomerRatings}
-        onCustomerRatingChange={(ratings) => {
-          setSelectedCustomerRatings(ratings);
-          setPage(0);
-        }}
-        selectedAdminRatings={selectedAdminRatings}
-        onAdminRatingChange={(ratings) => {
-          setSelectedAdminRatings(ratings);
-          setPage(0);
-        }}
-        selectedAdminTags={selectedAdminTags}
-        onAdminTagChange={(tags) => {
-          setSelectedAdminTags(tags);
-          setPage(0);
-        }}
-        availableTags={availableTags}
-      />
+  sessions={sessions}
+  pagination={pagination}
+  page={page}
+  rowsPerPage={rowsPerPage}
+  onPageChange={(newPage) => setPage(newPage)}
+  onRowsPerPageChange={(rows) => {
+    setRowsPerPage(rows);
+    setPage(0);
+  }}
+  onOpenSession={openSession}
+  selectedUuid={selectedSession?.uuid}
+  selectedCustomerRatings={selectedCustomerRatings}
+  onCustomerRatingChange={setSelectedCustomerRatings}
+  selectedAdminRatings={selectedAdminRatings}
+  onAdminRatingChange={setSelectedAdminRatings}
+  selectedAdminTags={selectedAdminTags}
+  onAdminTagChange={setSelectedAdminTags}
+  availableTags={availableTags}
+  feedbackSearch={feedbackSearch}
+  onFeedbackSearch={(q) => setFeedbackSearch(q)}
+  firstChatSearch={firstChatSearch}
+  onFirstChatSearch={(q) => setFirstChatSearch(q)}
+/>
 
       {/* Session Detail */}
       {selectedSession && (

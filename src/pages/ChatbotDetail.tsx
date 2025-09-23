@@ -106,7 +106,7 @@ export default function ChatbotDetail() {
 
       {tab === 2 && (
         <Box>
-          <ChatbotSessions chatbotId={bot.uuid} />
+          <ChatbotSessions />
         </Box>
       )}
 

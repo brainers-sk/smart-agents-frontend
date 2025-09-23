@@ -110,53 +110,53 @@ export default function SessionDetail({
       </Stack>
 
       {/* Messages */}
-      <Stack spacing={2} mt={3}>
+        <Stack spacing={2} mt={3}>
         {session.chatMessages.map((m) => {
-          const isUser = m.role === "user";
-          return (
+            const isUser = (typeof m.role === "string" && m.role === "user");
+            return (
             <Box
-              key={m.uuid}
-              sx={{
+                key={m.uuid}
+                sx={{
                 display: "flex",
                 justifyContent: isUser ? "flex-end" : "flex-start",
-              }}
+                }}
             >
-              <Paper
+                <Paper
                 elevation={1}
                 sx={{
-                  px: 2,
-                  py: 1.5,
-                  maxWidth: "75%",
-                  borderRadius: isUser
+                    px: 2,
+                    py: 1.5,
+                    maxWidth: "75%",
+                    borderRadius: isUser
                     ? "16px 16px 4px 16px"
                     : "16px 16px 16px 4px",
-                  bgcolor: isUser ? "#1976d2" : "#f5f5f5",
-                  color: isUser ? "white" : "black",
+                    bgcolor: isUser ? "#DF4425" : "#f5f5f5", // 🔴 červená pre user
+                    color: isUser ? "white" : "black",
                 }}
-              >
+                >
                 <Typography
-                  variant="subtitle1"
-                  sx={{
+                    variant="subtitle1"
+                    sx={{
                     fontWeight: "bold",
                     mb: 0.5,
                     color: isUser ? "white" : "black",
-                  }}
+                    }}
                 >
-                  {isUser ? "👤 User" : "🤖 Assistant"}
+                    {isUser ? "👤 Ja" : "🤖 AI asistent"}
                 </Typography>
                 <Typography
-                  variant="body2"
-                  sx={{ whiteSpace: "pre-wrap" }}
-                  component="div"
-                  dangerouslySetInnerHTML={{
+                    variant="body2"
+                    sx={{ whiteSpace: "pre-wrap" }}
+                    component="div"
+                    dangerouslySetInnerHTML={{
                     __html: marked.parse(m.content || ""),
-                  }}
+                    }}
                 />
-              </Paper>
+                </Paper>
             </Box>
-          );
+            );
         })}
-      </Stack>
+        </Stack>
     </Box>
   );
 }

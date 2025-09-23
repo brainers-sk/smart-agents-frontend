@@ -4,7 +4,6 @@ import Dashboard from "./pages/Dashboard";
 import ChatbotsList from "./pages/ChatbotsList";
 import ChatbotCreate from "./pages/ChatbotCreate";
 import ChatbotDetail from "./pages/ChatbotDetail";
-import ChatbotPreviewPage from "./components/ChatbotPreview";
 import LoginPage from "./pages/LoginPage";
 import {
   AuthenticatedTemplate,
@@ -32,10 +31,6 @@ export default function App() {
                   <Route path="/chatbots" element={<ChatbotsList />} />
                   <Route path="/chatbots/new" element={<ChatbotCreate />} />
                   <Route path="/chatbots/:uuid" element={<ChatbotDetail />} />
-                  <Route
-                    path="/chatbots/:uuid/preview"
-                    element={<ChatbotPreviewPage />}
-                  />
                 </Routes>
               </AuthenticatedTemplate>
 
