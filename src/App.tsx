@@ -10,6 +10,7 @@ import {
   UnauthenticatedTemplate,
 } from "@azure/msal-react";
 import ChatbotTeamsPage from "./pages/ChatbotTeamsPage";
+import Info from "./pages/Info";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/chatbots" element={<ChatbotsList />} />
+                  <Route path="/info" element={<Info />} />
                   <Route path="/chatbots/new" element={<ChatbotCreate />} />
                   <Route path="/chatbots/:uuid" element={<ChatbotDetail />} />
                 </Routes>

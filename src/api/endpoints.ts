@@ -123,3 +123,14 @@ export async function removeTagFromSession(
   )
   return data
 }
+
+export async function listChatbotStats(
+  query?: operations['ChatbotController_getChatbotStats']['parameters']['query'],
+  // Partial<Qs<paths['/admin/chatbot/stats/list']['get']>>,
+) {
+  type Get = paths['/admin/chatbot/stats/list']['get']
+  const { data } = await api.get<Resp<Get>>('/admin/chatbot/stats/list', {
+    params: query,
+  })
+  return data
+}
