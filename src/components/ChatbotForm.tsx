@@ -18,6 +18,7 @@ import type { ChatbotModel } from "../api/types";
 
 type CreateChatbotDto = components["schemas"]["CreateChatbotDto"];
 type UpdateChatbotDto = components["schemas"]["UpdateChatbotDto"];
+export type ChatbotFormValues = Partial<UpdateChatbotDto>;
 
 export default function ChatbotForm({
   initial,
@@ -26,7 +27,7 @@ export default function ChatbotForm({
   initial?: Partial<CreateChatbotDto & UpdateChatbotDto>;
   onSubmit: (data: CreateChatbotDto | UpdateChatbotDto) => void;
 }) {
-  const [form, setForm] = useState<any>({
+  const [form, setForm] = useState<ChatbotFormValues>({
     name: "",
     description: "",
     instructions: "",
@@ -41,12 +42,12 @@ export default function ChatbotForm({
   });
 
   const [newDomain, setNewDomain] = useState("");
-
+  const allowedDomains = form.allowedDomains ?? []
   const addDomain = () => {
-    if (newDomain && !form.allowedDomains.includes(newDomain)) {
+    if (newDomain && !allowedDomains.includes(newDomain)) {
       setForm({
         ...form,
-        allowedDomains: [...form.allowedDomains, newDomain],
+        allowedDomains: [...allowedDomains, newDomain],
       });
       setNewDomain("");
     }
@@ -55,7 +56,7 @@ export default function ChatbotForm({
   const removeDomain = (domain: string) => {
     setForm({
       ...form,
-      allowedDomains: form.allowedDomains.filter((d: string) => d !== domain),
+      allowedDomains: allowedDomains.filter((d: string) => d !== domain),
     });
   };
 
@@ -178,7 +179,7 @@ export default function ChatbotForm({
         </Stack>
 
         <Stack gap={1}>
-          {form.allowedDomains.map((d: string, i: number) => (
+          {allowedDomains.map((d: string, i: number) => (
             <Stack
               key={i}
               direction="row"
@@ -210,7 +211,18 @@ export default function ChatbotForm({
       )}
 
       <Stack direction="row" gap={2}>
-        <Button variant="contained" onClick={() => onSubmit(form)}>
+        <Button
+          variant="contained"
+          onClick={() =>
+            onSubmit({
+              ...form,
+              name: form.name ?? "", // required
+              temperature: form.temperature ?? 0.2, // required
+              model: form.model ?? ("gpt-4o" as ChatbotModel), // required
+              allowedDomains: form.allowedDomains ?? [], // normalize
+            })
+          }
+        >
           Save
         </Button>
       </Stack>

@@ -4,1003 +4,1003 @@
  */
 
 export interface paths {
-  '/health': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Healthcheck
-     * @description Healthcheck
-     */
-    get: operations['DefaultController_health']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/admin/chatbot/list': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Return chatbot
-     * @description Return chatbot
-     */
-    get: operations['ChatbotController_getChatbots']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/admin/chatbot/{chatbotUuid}': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Return chatbot
-     * @description Return chatbot
-     */
-    get: operations['ChatbotController_getChatbot']
-    put?: never
-    post?: never
-    /**
-     * Delete chatbot
-     * @description Delete chatbot
-     */
-    delete: operations['ChatbotController_deleteChatbot']
-    options?: never
-    head?: never
-    /**
-     * Update chatbot
-     * @description Update chatbot
-     */
-    patch: operations['ChatbotController_updateChatbot']
-    trace?: never
-  }
-  '/admin/chatbot': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Create chatbot
-     * @description Create chatbot
-     */
-    post: operations['ChatbotController_createChatbot']
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/admin/chatbot/stats/list': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Return chatbot statistics
-     * @description Aggregated statistics for each chatbot with pagination
-     */
-    get: operations['ChatbotController_getChatbotStats']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/{chatbotUuid}/message': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Send Message
-     * @description Send Message
-     */
-    post: operations['ChatController_send']
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/{sessionUuid}/rating': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Send customer rating and feedback
-     * @description Send customer rating and feedback
-     */
-    post: operations['ChatController_sendCustomerRating']
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/session/{sessionUuid}/messages': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Return session
-     * @description Return session
-     */
-    get: operations['ChatController_getChatSessionMessages']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/chatbot/{chatbotUuid}/sessions': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    /**
-     * Return module
-     * @description Return module
-     */
-    get: operations['ChatController_getChatbot']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/session/{sessionUuid}/add-tag': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Add a tag to a session
-     * @description Add a tag to a session (admin only)
-     */
-    post: operations['ChatController_addTagToSession']
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/chat/session/{sessionUuid}/remove-tag': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get?: never
-    put?: never
-    /**
-     * Remove a tag from a session
-     * @description Remove a tag from a session (admin only)
-     */
-    post: operations['ChatController_removeTagFromSession']
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/widget/{chatbotUuid}.js': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get: operations['WidgetController_script']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
-  '/embed/{chatbotUuid}': {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    get: operations['EmbedController_embed']
-    put?: never
-    post?: never
-    delete?: never
-    options?: never
-    head?: never
-    patch?: never
-    trace?: never
-  }
+    "/health": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Healthcheck
+         * @description Healthcheck
+         */
+        get: operations["DefaultController_health"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/chatbot/list": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Return chatbot
+         * @description Return chatbot
+         */
+        get: operations["ChatbotController_getChatbots"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/chatbot/{chatbotUuid}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Return chatbot
+         * @description Return chatbot
+         */
+        get: operations["ChatbotController_getChatbot"];
+        put?: never;
+        post?: never;
+        /**
+         * Delete chatbot
+         * @description Delete chatbot
+         */
+        delete: operations["ChatbotController_deleteChatbot"];
+        options?: never;
+        head?: never;
+        /**
+         * Update chatbot
+         * @description Update chatbot
+         */
+        patch: operations["ChatbotController_updateChatbot"];
+        trace?: never;
+    };
+    "/admin/chatbot": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Create chatbot
+         * @description Create chatbot
+         */
+        post: operations["ChatbotController_createChatbot"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/chatbot/stats/list": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Return chatbot statistics
+         * @description Aggregated statistics for each chatbot with pagination
+         */
+        get: operations["ChatbotController_getChatbotStats"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/{chatbotUuid}/message": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Send Message
+         * @description Send Message
+         */
+        post: operations["ChatController_send"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/{sessionUuid}/rating": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Send customer rating and feedback
+         * @description Send customer rating and feedback
+         */
+        post: operations["ChatController_sendCustomerRating"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/session/{sessionUuid}/messages": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Return session
+         * @description Return session
+         */
+        get: operations["ChatController_getChatSessionMessages"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/chatbot/{chatbotUuid}/sessions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Return module
+         * @description Return module
+         */
+        get: operations["ChatController_getChatbot"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/session/{sessionUuid}/add-tag": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Add a tag to a session
+         * @description Add a tag to a session (admin only)
+         */
+        post: operations["ChatController_addTagToSession"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/chat/session/{sessionUuid}/remove-tag": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Remove a tag from a session
+         * @description Remove a tag from a session (admin only)
+         */
+        post: operations["ChatController_removeTagFromSession"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/widget/{chatbotUuid}.js": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["WidgetController_script"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/embed/{chatbotUuid}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["EmbedController_embed"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
-export type webhooks = Record<string, never>
+export type webhooks = Record<string, never>;
 export interface components {
-  schemas: {
-    GetHealthCheckDto: {
-      /** @description Is app live? */
-      live: boolean
-      /** @description Is database live? */
-      database: boolean
-      /** @description Version of database migration */
-      migrationVersion?: string | null
-      /** @description Version of app */
-      appVersion: string
-    }
-    /**
-     * @description OpenAI model to use
-     * @enum {string}
-     */
-    ChatbotModelEnum:
-      | 'gpt-5'
-      | 'gpt-5-mini'
-      | 'gpt-5-nano'
-      | 'gpt-4.1'
-      | 'gpt-4.1-mini'
-      | 'gpt-4.1-nano'
-      | 'o3'
-      | 'o4-mini'
-      | 'gpt-4o'
-      | 'gpt-4o-realtime-preview'
-    GetChatbotDto: {
-      /** @description Name of the chatbot */
-      name?: string
-      /** @description Description of the chatbot */
-      description?: string | null
-      /** @description System instructions (prompt) for the chatbot */
-      instructions?: string
-      /**
-       * @description Temperature setting for chatbot responses
-       * @default 0.2
-       */
-      temperature: number
-      /**
-       * @description OpenAI model to use
-       * @default gpt-4o-mini
-       */
-      model: components['schemas']['ChatbotModelEnum']
-      /** @description CSS for the chatbot theme */
-      themeCss?: string | null
-      /** @description Label for the launcher button */
-      buttonLabel?: string | null
-      /** @description Custom CSS for the launcher button */
-      buttonStyleCss?: string | null
-      /**
-       * @description Will show in chatbot rating?
-       * @default false
-       * @example true
-       */
-      allowCustomerRating: boolean
-      allowedDomains: string[][]
-      /**
-       * @description Id number for database joining
-       * @example 1
-       */
-      id: number
-      /**
-       * @description Uuid for finding
-       * @example 00000000-0000-0000-0000-000000000000
-       */
-      uuid: string
-      /**
-       * Format: date-time
-       * @description Date of creation
-       * @example 2024-01-01
-       */
-      createdAt: string
-      /**
-       * Format: date-time
-       * @description Date of update
-       * @example 2024-01-01
-       */
-      updatedAt: string
-      /**
-       * @description UUID of user, who create it
-       * @example 2024-01-01
-       */
-      createdBy: string
-      /**
-       * @description UUID of user, who updated it
-       * @example 2024-01-01
-       */
-      updatedBy: string
-    }
-    GetChatbotsDto: {
-      items: components['schemas']['GetChatbotDto'][]
-      pagination: components['schemas']['GetChatbotDto']
-    }
-    GetChatbotWithTagsDto: {
-      /** @description Name of the chatbot */
-      name?: string
-      /** @description Description of the chatbot */
-      description?: string | null
-      /** @description System instructions (prompt) for the chatbot */
-      instructions?: string
-      /**
-       * @description Temperature setting for chatbot responses
-       * @default 0.2
-       */
-      temperature: number
-      /**
-       * @description OpenAI model to use
-       * @default gpt-4o-mini
-       */
-      model: components['schemas']['ChatbotModelEnum']
-      /** @description CSS for the chatbot theme */
-      themeCss?: string | null
-      /** @description Label for the launcher button */
-      buttonLabel?: string | null
-      /** @description Custom CSS for the launcher button */
-      buttonStyleCss?: string | null
-      /**
-       * @description Will show in chatbot rating?
-       * @default false
-       * @example true
-       */
-      allowCustomerRating: boolean
-      allowedDomains: string[][]
-      /**
-       * @description Id number for database joining
-       * @example 1
-       */
-      id: number
-      /**
-       * @description Uuid for finding
-       * @example 00000000-0000-0000-0000-000000000000
-       */
-      uuid: string
-      /**
-       * Format: date-time
-       * @description Date of creation
-       * @example 2024-01-01
-       */
-      createdAt: string
-      /**
-       * Format: date-time
-       * @description Date of update
-       * @example 2024-01-01
-       */
-      updatedAt: string
-      /**
-       * @description UUID of user, who create it
-       * @example 2024-01-01
-       */
-      createdBy: string
-      /**
-       * @description UUID of user, who updated it
-       * @example 2024-01-01
-       */
-      updatedBy: string
-      /** @description tags of admin */
-      tags: string[]
-    }
-    CreateChatbotDto: {
-      /** @description Name of the chatbot */
-      name: string
-      /** @description Description of the chatbot */
-      description?: string | null
-      /** @description System instructions (prompt) for the chatbot */
-      instructions?: string
-      /**
-       * @description Temperature setting for chatbot responses
-       * @default 0.2
-       */
-      temperature: number
-      /**
-       * @description OpenAI model to use
-       * @default gpt-4o-mini
-       */
-      model: components['schemas']['ChatbotModelEnum']
-    }
-    UpdateChatbotDto: {
-      /** @description Name of the chatbot */
-      name?: string
-      /** @description Description of the chatbot */
-      description?: string | null
-      /** @description System instructions (prompt) for the chatbot */
-      instructions?: string
-      /**
-       * @description Temperature setting for chatbot responses
-       * @default 0.2
-       */
-      temperature: number
-      /**
-       * @description OpenAI model to use
-       * @default gpt-4o-mini
-       */
-      model: components['schemas']['ChatbotModelEnum']
-      /** @description CSS for the chatbot theme */
-      themeCss?: string | null
-      /** @description Label for the launcher button */
-      buttonLabel?: string | null
-      /** @description Custom CSS for the launcher button */
-      buttonStyleCss?: string | null
-      /**
-       * @description Will show in chatbot rating?
-       * @default false
-       * @example true
-       */
-      allowCustomerRating: boolean
-      allowedDomains: string[][]
-    }
-    GetChatbotStatsItemDto: {
-      uuid: string
-      name: string
-      conversationCount: number
-      /** Format: date-time */
-      lastConversationAt?: string | null
-      averageCustomerRating: number | null
-      totalMessages: number
-      messagesPerConversation: number
-    }
-    ResponseGetItemsPaginationDto: {
-      /**
-       * @description The page, we are on
-       * @example 1
-       */
-      currentPage: number
-      /**
-       * @description Number of items per page
-       * @example 10
-       */
-      pagination: number
-      /**
-       * @description Total number of pages per current pagination
-       * @example 100
-       */
-      totalPages: number
-      /**
-       * @description Total number of items pre filter
-       * @example 100
-       */
-      totalItems: number
-    }
-    GetChatbotStatsDto: {
-      items: components['schemas']['GetChatbotStatsItemDto'][]
-      pagination: components['schemas']['ResponseGetItemsPaginationDto']
-    }
-    SendMessageDto: {
-      /** @description message to send to chatbot */
-      message: string
-      /** @description Uuid of session if it is in one session */
-      sessionUuid?: string
-    }
-    SendMessageReplyDto: {
-      /** @description Uuid of session if it is in one session */
-      sessionUuid: string
-      /** @description Response from chat */
-      reply: string
-    }
-    SendCustomerRatingDto: {
-      /**
-       * @description Rating in stars as number from 0 to 5
-       * @example 5
-       */
-      customerRating: number
-      /**
-       * @description Text feedback of customer
-       * @example It was perfect
-       */
-      customerFeedback?: string
-    }
-    DefaultResponseDto: {
-      /** @description response message */
-      message: string
-      /**
-       * @description Was it success?
-       * @example success
-       * @enum {string}
-       */
-      response: 'success' | 'fail'
-    }
-    GetChatDto: {
-      uuid: string
-      /** Format: date-time */
-      createdAt: string
-      content: string
-      role: Record<string, never>
-    }
-    GetChatSessionMessagesDto: {
-      uuid: string
-      /** Format: date-time */
-      createdAt: string
-      customerRating: number | null
-      customerFeedback: string | null
-      adminRating: number | null
-      adminTag: string[]
-      chatMessages: components['schemas']['GetChatDto'][]
-    }
-    GetChatSessionDto: {
-      uuid: string
-      /** Format: date-time */
-      createdAt: string
-      customerRating: number | null
-      customerFeedback: string | null
-      adminRating: number | null
-      adminTag: string[] | null
-      firstChat: components['schemas']['GetChatDto'] | null
-    }
-    GetChatSessionsDto: {
-      items: components['schemas']['GetChatSessionDto'][]
-      pagination: components['schemas']['ResponseGetItemsPaginationDto']
-    }
-    AddOrRemoveTagDto: {
-      /**
-       * @description name of tag
-       * @example test
-       */
-      tag: string
-    }
-  }
-  responses: never
-  parameters: never
-  requestBodies: never
-  headers: never
-  pathItems: never
+    schemas: {
+        GetHealthCheckDto: {
+            /** @description Is app live? */
+            live: boolean;
+            /** @description Is database live? */
+            database: boolean;
+            /** @description Version of database migration */
+            migrationVersion?: string | null;
+            /** @description Version of app */
+            appVersion: string;
+        };
+        /**
+         * @description OpenAI model to use
+         * @enum {string}
+         */
+        ChatbotModelEnum: "gpt-5" | "gpt-5-mini" | "gpt-5-nano" | "gpt-4.1" | "gpt-4.1-mini" | "gpt-4.1-nano" | "o3" | "o4-mini" | "gpt-4o" | "gpt-4o-realtime-preview";
+        GetChatbotDto: {
+            /** @description Name of the chatbot */
+            name?: string;
+            /** @description Description of the chatbot */
+            description?: string | null;
+            /** @description System instructions (prompt) for the chatbot */
+            instructions?: string;
+            /**
+             * @description Temperature setting for chatbot responses
+             * @default 0.2
+             */
+            temperature: number;
+            /**
+             * @description OpenAI model to use
+             * @default gpt-4o-mini
+             */
+            model: components["schemas"]["ChatbotModelEnum"];
+            /** @description CSS for the chatbot theme */
+            themeCss?: string | null;
+            /** @description Label for the launcher button */
+            buttonLabel?: string | null;
+            /** @description Custom CSS for the launcher button */
+            buttonStyleCss?: string | null;
+            /**
+             * @description Will show in chatbot rating?
+             * @default false
+             * @example true
+             */
+            allowCustomerRating: boolean;
+            /**
+             * @description Allowed domains for chatbot
+             * @example http://localhost:3000
+             */
+            allowedDomains?: string[];
+            /**
+             * @description Id number for database joining
+             * @example 1
+             */
+            id: number;
+            /**
+             * @description Uuid for finding
+             * @example 00000000-0000-0000-0000-000000000000
+             */
+            uuid: string;
+            /**
+             * Format: date-time
+             * @description Date of creation
+             * @example 2024-01-01
+             */
+            createdAt: string;
+            /**
+             * Format: date-time
+             * @description Date of update
+             * @example 2024-01-01
+             */
+            updatedAt: string;
+            /**
+             * @description UUID of user, who create it
+             * @example 2024-01-01
+             */
+            createdBy: string;
+            /**
+             * @description UUID of user, who updated it
+             * @example 2024-01-01
+             */
+            updatedBy: string;
+        };
+        GetChatbotsDto: {
+            items: components["schemas"]["GetChatbotDto"][];
+            pagination: components["schemas"]["GetChatbotDto"];
+        };
+        GetChatbotWithTagsDto: {
+            /** @description Name of the chatbot */
+            name?: string;
+            /** @description Description of the chatbot */
+            description?: string | null;
+            /** @description System instructions (prompt) for the chatbot */
+            instructions?: string;
+            /**
+             * @description Temperature setting for chatbot responses
+             * @default 0.2
+             */
+            temperature: number;
+            /**
+             * @description OpenAI model to use
+             * @default gpt-4o-mini
+             */
+            model: components["schemas"]["ChatbotModelEnum"];
+            /** @description CSS for the chatbot theme */
+            themeCss?: string | null;
+            /** @description Label for the launcher button */
+            buttonLabel?: string | null;
+            /** @description Custom CSS for the launcher button */
+            buttonStyleCss?: string | null;
+            /**
+             * @description Will show in chatbot rating?
+             * @default false
+             * @example true
+             */
+            allowCustomerRating: boolean;
+            /**
+             * @description Allowed domains for chatbot
+             * @example http://localhost:3000
+             */
+            allowedDomains?: string[];
+            /**
+             * @description Id number for database joining
+             * @example 1
+             */
+            id: number;
+            /**
+             * @description Uuid for finding
+             * @example 00000000-0000-0000-0000-000000000000
+             */
+            uuid: string;
+            /**
+             * Format: date-time
+             * @description Date of creation
+             * @example 2024-01-01
+             */
+            createdAt: string;
+            /**
+             * Format: date-time
+             * @description Date of update
+             * @example 2024-01-01
+             */
+            updatedAt: string;
+            /**
+             * @description UUID of user, who create it
+             * @example 2024-01-01
+             */
+            createdBy: string;
+            /**
+             * @description UUID of user, who updated it
+             * @example 2024-01-01
+             */
+            updatedBy: string;
+            /** @description tags of admin */
+            tags: string[];
+        };
+        CreateChatbotDto: {
+            /** @description Name of the chatbot */
+            name: string;
+            /** @description Description of the chatbot */
+            description?: string | null;
+            /** @description System instructions (prompt) for the chatbot */
+            instructions?: string;
+            /**
+             * @description Temperature setting for chatbot responses
+             * @default 0.2
+             */
+            temperature: number;
+            /**
+             * @description OpenAI model to use
+             * @default gpt-4o-mini
+             */
+            model: components["schemas"]["ChatbotModelEnum"];
+        };
+        UpdateChatbotDto: {
+            /** @description Name of the chatbot */
+            name?: string;
+            /** @description Description of the chatbot */
+            description?: string | null;
+            /** @description System instructions (prompt) for the chatbot */
+            instructions?: string;
+            /**
+             * @description Temperature setting for chatbot responses
+             * @default 0.2
+             */
+            temperature: number;
+            /**
+             * @description OpenAI model to use
+             * @default gpt-4o-mini
+             */
+            model: components["schemas"]["ChatbotModelEnum"];
+            /** @description CSS for the chatbot theme */
+            themeCss?: string | null;
+            /** @description Label for the launcher button */
+            buttonLabel?: string | null;
+            /** @description Custom CSS for the launcher button */
+            buttonStyleCss?: string | null;
+            /**
+             * @description Will show in chatbot rating?
+             * @default false
+             * @example true
+             */
+            allowCustomerRating: boolean;
+            /**
+             * @description Allowed domains for chatbot
+             * @example http://localhost:3000
+             */
+            allowedDomains?: string[];
+        };
+        GetChatbotStatsItemDto: {
+            uuid: string;
+            name: string;
+            conversationCount: number;
+            /** Format: date-time */
+            lastConversationAt?: string | null;
+            averageCustomerRating: number | null;
+            totalMessages: number;
+            messagesPerConversation: number;
+        };
+        ResponseGetItemsPaginationDto: {
+            /**
+             * @description The page, we are on
+             * @example 1
+             */
+            currentPage: number;
+            /**
+             * @description Number of items per page
+             * @example 10
+             */
+            pagination: number;
+            /**
+             * @description Total number of pages per current pagination
+             * @example 100
+             */
+            totalPages: number;
+            /**
+             * @description Total number of items pre filter
+             * @example 100
+             */
+            totalItems: number;
+        };
+        GetChatbotStatsDto: {
+            items: components["schemas"]["GetChatbotStatsItemDto"][];
+            pagination: components["schemas"]["ResponseGetItemsPaginationDto"];
+        };
+        SendMessageDto: {
+            /** @description message to send to chatbot */
+            message: string;
+            /** @description Uuid of session if it is in one session */
+            sessionUuid?: string;
+        };
+        SendMessageReplyDto: {
+            /** @description Uuid of session if it is in one session */
+            sessionUuid: string;
+            /** @description Response from chat */
+            reply: string;
+        };
+        SendCustomerRatingDto: {
+            /**
+             * @description Rating in stars as number from 0 to 5
+             * @example 5
+             */
+            customerRating: number;
+            /**
+             * @description Text feedback of customer
+             * @example It was perfect
+             */
+            customerFeedback?: string;
+        };
+        DefaultResponseDto: {
+            /** @description response message */
+            message: string;
+            /**
+             * @description Was it success?
+             * @example success
+             * @enum {string}
+             */
+            response: "success" | "fail";
+        };
+        GetChatDto: {
+            uuid: string;
+            /** Format: date-time */
+            createdAt: string;
+            content: string;
+            role: Record<string, never>;
+        };
+        GetChatSessionMessagesDto: {
+            uuid: string;
+            /** Format: date-time */
+            createdAt: string;
+            customerRating: number | null;
+            customerFeedback: string | null;
+            adminRating: number | null;
+            adminTag: string[];
+            chatMessages: components["schemas"]["GetChatDto"][];
+        };
+        GetChatSessionDto: {
+            uuid: string;
+            /** Format: date-time */
+            createdAt: string;
+            customerRating: number | null;
+            customerFeedback: string | null;
+            adminRating: number | null;
+            adminTag: string[] | null;
+            firstChat: components["schemas"]["GetChatDto"] | null;
+        };
+        GetChatSessionsDto: {
+            items: components["schemas"]["GetChatSessionDto"][];
+            pagination: components["schemas"]["ResponseGetItemsPaginationDto"];
+        };
+        AddOrRemoveTagDto: {
+            /**
+             * @description name of tag
+             * @example test
+             */
+            tag: string;
+        };
+    };
+    responses: never;
+    parameters: never;
+    requestBodies: never;
+    headers: never;
+    pathItems: never;
 }
-export type $defs = Record<string, never>
+export type $defs = Record<string, never>;
 export interface operations {
-  DefaultController_health: {
-    parameters: {
-      query?: {
-        /** @description The page, we are on */ currentPage?: number
-        /** @description Number of items per page */
-        pagination?: number
-      }
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Healthcheck */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetHealthCheckDto']
-        }
-      }
-    }
-  }
-  ChatbotController_getChatbots: {
-    parameters: {
-      query?: {
-        /** @description The page, we are on */
-        currentPage?: number
-        /** @description Number of items per page */
-        pagination?: number
-      }
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Return chatbot data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotsDto']
-        }
-      }
-    }
-  }
-  ChatbotController_getChatbot: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        /** @description uuid of chatbot */
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Return chatbot data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotWithTagsDto']
-        }
-      }
-    }
-  }
-  ChatbotController_deleteChatbot: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        /** @description uuid of chatbot */
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Delete chatbot data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotDto']
-        }
-      }
-    }
-  }
-  ChatbotController_updateChatbot: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        /** @description uuid of chatbot */
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['UpdateChatbotDto']
-      }
-    }
-    responses: {
-      /** @description Update chatbot data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotDto']
-        }
-      }
-    }
-  }
-  ChatbotController_createChatbot: {
-    parameters: {
-      query?: never
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['CreateChatbotDto']
-      }
-    }
-    responses: {
-      /** @description Create chatbot data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotDto']
-        }
-      }
-      201: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotDto']
-        }
-      }
-    }
-  }
-  ChatbotController_getChatbotStats: {
-    parameters: {
-      query?: {
-        /** @description The page, we are on */
-        currentPage?: number
-        /** @description Number of items per page */
-        pagination?: number
-      }
-      header?: never
-      path?: never
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description List of chatbots with statistics */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatbotStatsDto']
-        }
-      }
-    }
-  }
-  ChatController_send: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SendMessageDto']
-      }
-    }
-    responses: {
-      /** @description Send Message */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['SendMessageReplyDto']
-        }
-      }
-      201: {
-        headers: {
-          [name: string]: unknown
-        }
-        content?: never
-      }
-    }
-  }
-  ChatController_sendCustomerRating: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        sessionUuid: string
-      }
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['SendCustomerRatingDto']
-      }
-    }
-    responses: {
-      /** @description Customer rating and feedback was sent */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-      201: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-    }
-  }
-  ChatController_getChatSessionMessages: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        sessionUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Return session data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatSessionMessagesDto']
-        }
-      }
-    }
-  }
-  ChatController_getChatbot: {
-    parameters: {
-      query?: {
-        /** @description The page, we are on */
-        currentPage?: number
-        /** @description Number of items per page */
-        pagination?: number
-        /** @description Rating by customer */
-        customerRating?: number[]
-        /** @description Rating by admin */
-        adminRating?: number[]
-        /** @description Tags created by admin */
-        adminTag?: string[]
-        /** @description Search string in messages */
-        search?: string
-        /** @description Search string in customer feedback */
-        customerFeedback?: string
-      }
-      header?: never
-      path: {
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      /** @description Return module data */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['GetChatSessionsDto']
-        }
-      }
-    }
-  }
-  ChatController_addTagToSession: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        sessionUuid: string
-      }
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['AddOrRemoveTagDto']
-      }
-    }
-    responses: {
-      /** @description Tag added */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-      201: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-    }
-  }
-  ChatController_removeTagFromSession: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        sessionUuid: string
-      }
-      cookie?: never
-    }
-    requestBody: {
-      content: {
-        'application/json': components['schemas']['AddOrRemoveTagDto']
-      }
-    }
-    responses: {
-      /** @description Tag removed */
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-      201: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': components['schemas']['DefaultResponseDto']
-        }
-      }
-    }
-  }
-  WidgetController_script: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content: {
-          'application/json': string
-        }
-      }
-    }
-  }
-  EmbedController_embed: {
-    parameters: {
-      query?: never
-      header?: never
-      path: {
-        chatbotUuid: string
-      }
-      cookie?: never
-    }
-    requestBody?: never
-    responses: {
-      200: {
-        headers: {
-          [name: string]: unknown
-        }
-        content?: never
-      }
-    }
-  }
+    DefaultController_health: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Healthcheck */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetHealthCheckDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_getChatbots: {
+        parameters: {
+            query?: {
+                /** @description The page, we are on */
+                currentPage?: number;
+                /** @description Number of items per page */
+                pagination?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Return chatbot data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotsDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_getChatbot: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description uuid of chatbot */
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Return chatbot data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotWithTagsDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_deleteChatbot: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description uuid of chatbot */
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Delete chatbot data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_updateChatbot: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description uuid of chatbot */
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateChatbotDto"];
+            };
+        };
+        responses: {
+            /** @description Update chatbot data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_createChatbot: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateChatbotDto"];
+            };
+        };
+        responses: {
+            /** @description Create chatbot data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotDto"];
+                };
+            };
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotDto"];
+                };
+            };
+        };
+    };
+    ChatbotController_getChatbotStats: {
+        parameters: {
+            query?: {
+                /** @description The page, we are on */
+                currentPage?: number;
+                /** @description Number of items per page */
+                pagination?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description List of chatbots with statistics */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatbotStatsDto"];
+                };
+            };
+        };
+    };
+    ChatController_send: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SendMessageDto"];
+            };
+        };
+        responses: {
+            /** @description Send Message */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SendMessageReplyDto"];
+                };
+            };
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    ChatController_sendCustomerRating: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                sessionUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["SendCustomerRatingDto"];
+            };
+        };
+        responses: {
+            /** @description Customer rating and feedback was sent */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+        };
+    };
+    ChatController_getChatSessionMessages: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                sessionUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Return session data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatSessionMessagesDto"];
+                };
+            };
+        };
+    };
+    ChatController_getChatbot: {
+        parameters: {
+            query?: {
+                /** @description The page, we are on */
+                currentPage?: number;
+                /** @description Number of items per page */
+                pagination?: number;
+                /** @description Rating by customer */
+                customerRating?: number[];
+                /** @description Rating by admin */
+                adminRating?: number[];
+                /** @description Tags created by admin */
+                adminTag?: string[];
+                /** @description Search string in messages */
+                search?: string;
+                /** @description Search string in customer feedback */
+                customerFeedback?: string;
+            };
+            header?: never;
+            path: {
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Return module data */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GetChatSessionsDto"];
+                };
+            };
+        };
+    };
+    ChatController_addTagToSession: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                sessionUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddOrRemoveTagDto"];
+            };
+        };
+        responses: {
+            /** @description Tag added */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+        };
+    };
+    ChatController_removeTagFromSession: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                sessionUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AddOrRemoveTagDto"];
+            };
+        };
+        responses: {
+            /** @description Tag removed */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DefaultResponseDto"];
+                };
+            };
+        };
+    };
+    WidgetController_script: {
+        parameters: {
+            query: {
+                preview: string;
+            };
+            header?: never;
+            path: {
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": string;
+                };
+            };
+        };
+    };
+    EmbedController_embed: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                chatbotUuid: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
 }
