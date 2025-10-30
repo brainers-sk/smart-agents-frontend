@@ -4,14 +4,20 @@ import { Button } from "@mui/material";
 export default function LoginButton() {
   const { instance } = useMsal();
 
-  const login = () => {
-    instance.loginPopup({
-      scopes: ["openid", "profile", "email", import.meta.env.VITE_AZURE_API_SCOPE],
-    }).then((res) => {
-      console.log("User:", res.account);
-      localStorage.setItem("token", res.accessToken);
-      window.location.replace("/");
-    });
+  const login = async () => {
+    try {
+      await instance.loginRedirect({
+        scopes: [
+          "openid",
+          "profile",
+          "email",
+          import.meta.env.VITE_AZURE_API_SCOPE!,
+        ],
+        redirectStartPage: "/", // kam ťa po logine vráti
+      });
+    } catch (err) {
+      console.error("Login error:", err);
+    }
   };
 
   return (

@@ -279,6 +279,11 @@ export interface components {
             appVersion: string;
         };
         /**
+         * @description Service type if openai or copilot
+         * @enum {string}
+         */
+        ServiceEnum: "openai" | "copilot";
+        /**
          * @description OpenAI model to use
          * @enum {string}
          */
@@ -290,6 +295,8 @@ export interface components {
             description?: string | null;
             /** @description System instructions (prompt) for the chatbot */
             instructions?: string;
+            /** @description Service type if openai or copilot */
+            service?: components["schemas"]["ServiceEnum"];
             /**
              * @description Temperature setting for chatbot responses
              * @default 0.2
@@ -361,6 +368,8 @@ export interface components {
             description?: string | null;
             /** @description System instructions (prompt) for the chatbot */
             instructions?: string;
+            /** @description Service type if openai or copilot */
+            service?: components["schemas"]["ServiceEnum"];
             /**
              * @description Temperature setting for chatbot responses
              * @default 0.2
@@ -430,6 +439,8 @@ export interface components {
             description?: string | null;
             /** @description System instructions (prompt) for the chatbot */
             instructions?: string;
+            /** @description Service type if openai or copilot */
+            service?: components["schemas"]["ServiceEnum"];
             /**
              * @description Temperature setting for chatbot responses
              * @default 0.2
@@ -448,6 +459,8 @@ export interface components {
             description?: string | null;
             /** @description System instructions (prompt) for the chatbot */
             instructions?: string;
+            /** @description Service type if openai or copilot */
+            service?: components["schemas"]["ServiceEnum"];
             /**
              * @description Temperature setting for chatbot responses
              * @default 0.2

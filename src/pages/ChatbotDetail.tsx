@@ -13,13 +13,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import ChatbotForm from "../components/ChatbotForm";
 import ChatPlayground from "../components/ChatPlayground";
 import ChatbotPreview from "../components/ChatbotPreview";
-import ChatbotIntegrations from "../components/ChatbotIntegrations"; // ⬅️ pridaj import
+import ChatbotIntegrations from "../components/ChatbotIntegrations";
 import { getChatbot, updateChatbot, deleteChatbot } from "../api/endpoints";
 import type { components } from "../api/schema";
 import ChatbotSessions from "./ChatbotSessions";
+import { toUpdatePayload } from "../utils/chatbot";
 
 type GetChatbotDto = components["schemas"]["GetChatbotDto"];
-type UpdateChatbotDto = components["schemas"]["UpdateChatbotDto"];
 
 export default function ChatbotDetail() {
   const { uuid } = useParams();
@@ -39,6 +39,11 @@ export default function ChatbotDetail() {
     );
   }
 
+  const subtitle =
+    bot.model === ("copilot" as any)
+      ? "Service: Microsoft Copilot"
+      : `Model: ${bot.model}`;
+
   return (
     <Container sx={{ py: 3 }}>
       {/* Header */}
@@ -46,20 +51,17 @@ export default function ChatbotDetail() {
         direction="row"
         justifyContent="space-between"
         alignItems="center"
-        mb={2}
+        mb={1}
       >
-        <Typography variant="h5">{bot.name}</Typography>
+        <Box>
+          <Typography variant="h5">{bot.name}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {subtitle}
+          </Typography>
+        </Box>
+
         <Stack direction="row" gap={1}>
-          <Button
-            variant="contained"
-            onClick={async () => {
-              await updateChatbot(bot.uuid, bot as UpdateChatbotDto);
-              const refreshed = await getChatbot(bot.uuid);
-              setBot(refreshed);
-            }}
-          >
-            Save
-          </Button>
+          {/* Keep just Delete here so we don’t send stale 'bot' */}
           <Button
             color="error"
             onClick={async () => {
@@ -86,7 +88,8 @@ export default function ChatbotDetail() {
           <ChatbotForm
             initial={bot}
             onSubmit={async (data) => {
-              await updateChatbot(bot.uuid, data as UpdateChatbotDto);
+              // Merge form changes with current bot, normalize with toUpdatePayload
+              await updateChatbot(bot.uuid, toUpdatePayload({ ...bot, ...data }));
               const refreshed = await getChatbot(bot.uuid);
               setBot(refreshed);
             }}
